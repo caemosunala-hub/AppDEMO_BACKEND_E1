@@ -1,0 +1,43 @@
+@api = http://localhost:3021/api/v1/institutos
+
+### Obtener todos los institutos
+GET {{api}}
+
+### Obtener un instituto por su ID (Operational Key)
+GET {{api}}/1
+
+### Obtener un instituto por su ID (Business Key)
+GET {{api}}/18EUT0001U?keyType=BK
+
+### POST ITEM INSTITUTO
+POST {{api}}
+Content-Type: application/json
+
+{
+    "IdInstitutoOK": "4",
+    "IdInstitutoBK": "18DIT0005Z",
+    "DesInstituto": "Instituto Tecnológico de Ruiz",
+    "Matriz": "N",
+    "Giro": "Educacion",
+    "Alias": "ITT",
+    "IdInstitutoSupOK": "1"
+}
+
+
+### PUT ITEM INSTITUTO (Modificar)
+PUT {{api}}/4
+Content-Type: application/json
+
+{
+    "IdInstitutoOK": "4",
+    "IdInstitutoBK": "18DIT0005Z",
+    "DesInstituto": "Instituto Tecnológico de Ruiz (Actualizado)",
+    "Matriz": "S",
+    "Giro": "Educación Superior",
+    "Alias": "ITR-Modificado",
+    "IdInstitutoSupOK": "1"
+}
+
+
+### DELETE ITEM INSTITUTO (Borrar)
+DELETE {{api}}/4

@@ -1,4 +1,4 @@
-import * as EtiquetasServices from '../services/Etiquetas.service.js';
+import * as EtiquetasServices from '../services/etiquetas.service.js';
 import boom from '@hapi/boom';
 
 // Indigo: API GET (Todas las Etiquetas)

@@ -40,7 +40,6 @@ app.get('/IngIndigo', (req, res) => {
 app.get('/', (req, res) => {
     // Te redirige automáticamente a la ruta de tu API
     res.redirect(config.API_URL); 
-    res.send('¡API Backend funcionando correctamente!');
 });
 
 // Routes

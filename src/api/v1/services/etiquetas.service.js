@@ -2,7 +2,7 @@ import { OK, FAIL } from '../../../middlewares/resp.handler.js';
 import Etiquetas from '../models/etiquetas.js';
 import boom from '@hapi/boom';
 
-// Indigo: GET ETIQUETAS LIST (Este es el que usa GetAllLabels en React)
+// EMI: GET ETIQUETAS LIST (Este es el que usa GetAllLabels en React)
 export const getEtiquetasList = async () => {
     let etiquetasList;
     try {

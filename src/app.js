@@ -30,9 +30,9 @@ app.get(`${api}`, (req, res) => {
     );
 });
 
-app.get('/IngIndigo', (req, res) => {
+app.get('/IngEMI', (req, res) => {
     res.send(
-        `<h1>RESTful running in IngIndigo</h1> <p> eSecurity: <b>${api}/api-docs</b> for more information.</p>`
+        `<h1>RESTful running in IngEMI</h1> <p> eSecurity: <b>${api}/api-docs</b> for more information.</p>`
     );
 });
 

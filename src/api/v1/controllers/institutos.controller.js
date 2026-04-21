@@ -3,7 +3,7 @@ import * as InstitutosServices from '../services/Institutos.service.js';
 // Importamos la librería de errores
 import boom from '@hapi/boom';
 
-// Indigo: API GET (Todas las Instituciones)
+// EMI: API GET (Todas las Instituciones)
 export const getInstitutosList = async (req, res, next) => {
     try {
         const institutosList = await InstitutosServices.getInstitutosList();
@@ -27,7 +27,7 @@ export const getInstitutosList = async (req, res, next) => {
     }
 };
 
-// Indigo: API GET (Solo un Instituto por ID)
+// EMI: API GET (Solo un Instituto por ID)
 export const getInstitutoItem = async (req, res, next) => {
     try {
         // Obtenemos el parámetro 'id' desde la URL usando desestructuración
@@ -55,15 +55,15 @@ export const getInstitutoItem = async (req, res, next) => {
     }
 };
 
-// Indigo: API POST
+// EMI: API POST
 // ----------------------------------------------------------------------
-// Indigo: API POST (ADD) Instituto o Institutos (JSON en BODY)
+// EMI: API POST (ADD) Instituto o Institutos (JSON en BODY)
 export const postInstitutoItem = async (req, res, next) => {
     try {
-        // Indigo: Mandamos el body directamente al servicio (puede ser un objeto o un arreglo)
+        // EMI: Mandamos el body directamente al servicio (puede ser un objeto o un arreglo)
         const institutosAdded = await InstitutosServices.postInstitutoItem(req.body);
         
-        // Indigo: Validamos usando las banderas de nuestro manejador de respuestas
+        // EMI: Validamos usando las banderas de nuestro manejador de respuestas
         if (institutosAdded.fail) {
             // El estatus 409 (Conflict) es ideal cuando intentan insertar IDs duplicados
             res.status(409).json(institutosAdded);
@@ -77,18 +77,18 @@ export const postInstitutoItem = async (req, res, next) => {
     }
 };
 
-// Indigo: API PUT
+// EMI: API PUT
 // ----------------------------------------------------------------------
-// Indigo: API PUT (MODIFY) Instituto.
+// EMI: API PUT (MODIFY) Instituto.
 export const putInstitutoItem = async (req, res, next) => {
     try {
         // 1. Obtenemos el ID del instituto desde la URL (ej. /api/v1/institutos/123)
         const { id } = req.params;
-        console.log('Indigo: controller id -> ', id);
+        console.log('EMI: controller id -> ', id);
         
         // 2. Obtenemos la nueva información desde el cuerpo de la petición (JSON)
         const paInstitutoItem = req.body;
-        console.log('Indigo: controller body -> ', paInstitutoItem);
+        console.log('EMI: controller body -> ', paInstitutoItem);
         
         // 3. Mandamos llamar al servicio que creaste en el paso 8.1
         const updatedInstitutoItem = await InstitutosServices.putInstitutoItem(id, paInstitutoItem);
@@ -105,14 +105,14 @@ export const putInstitutoItem = async (req, res, next) => {
     }
 };
 
-// Indigo: API DELETE
+// EMI: API DELETE
 // ----------------------------------------------------------------------
-// Indigo: API DELETE (REMOVE) Instituto.
+// EMI: API DELETE (REMOVE) Instituto.
 export const deleteInstitutoItem = async (req, res, next) => {
     try {
         // 1. Obtenemos el ID del instituto a borrar desde la URL (ej. /api/v1/institutos/4)
         const { id } = req.params;
-        console.log('Indigo: controller delete id -> ', id);
+        console.log('EMI: controller delete id -> ', id);
         
         // 2. Mandamos llamar al servicio de borrado que creaste en el paso 9.1
         const deletedInstitutoItem = await InstitutosServices.deleteInstitutoItem(id);

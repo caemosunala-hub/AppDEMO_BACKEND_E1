@@ -1,7 +1,7 @@
 import * as EtiquetasServices from '../services/etiquetas.service.js';
 import boom from '@hapi/boom';
 
-// Indigo: API GET (Todas las Etiquetas)
+// EMI: API GET (Todas las Etiquetas)
 export const getEtiquetasList = async (req, res, next) => {
     try {
         const etiquetasList = await EtiquetasServices.getEtiquetasList();
@@ -19,7 +19,7 @@ export const getEtiquetasList = async (req, res, next) => {
     }
 };
 
-// Indigo: API GET (Solo una etiqueta por ID)
+// EMI: API GET (Solo una etiqueta por ID)
 export const getEtiquetaItem = async (req, res, next) => {
     try {
         const { id } = req.params;
@@ -40,9 +40,9 @@ export const getEtiquetaItem = async (req, res, next) => {
     }
 };
 
-// Indigo: API POST
+// EMI: API POST
 // ----------------------------------------------------------------------
-// Indigo: API POST (ADD) Etiqueta o Etiquetas (JSON en BODY)
+// EMI: API POST (ADD) Etiqueta o Etiquetas (JSON en BODY)
 export const postEtiquetaItem = async (req, res, next) => {
     try {
         const etiquetasAdded = await EtiquetasServices.postEtiquetaItem(req.body);
@@ -56,9 +56,9 @@ export const postEtiquetaItem = async (req, res, next) => {
     }
 };
 
-// Indigo: API PUT
+// EMI: API PUT
 // ----------------------------------------------------------------------
-// Indigo: API PUT (MODIFY) Etiqueta.
+// EMI: API PUT (MODIFY) Etiqueta.
 export const putEtiquetaItem = async (req, res, next) => {
     try {
         const { id } = req.params;
@@ -75,9 +75,9 @@ export const putEtiquetaItem = async (req, res, next) => {
     }
 };
 
-// Indigo: API DELETE
+// EMI: API DELETE
 // ----------------------------------------------------------------------
-// Indigo: API DELETE (REMOVE) Etiqueta.
+// EMI: API DELETE (REMOVE) Etiqueta.
 export const deleteEtiquetaItem = async (req, res, next) => {
     try {
         const { id } = req.params;
